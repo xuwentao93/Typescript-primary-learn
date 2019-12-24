@@ -1,5 +1,13 @@
-// const text = require('./something')
+import React from 'react'
+import { render } from 'react-dom'
+import hello from './hello.ts'
 
-const root = document.getElementById('root')
-
-root.innerText = text
+function App() {
+  return (
+    <div>{hello}</div>
+  )
+}
+render(
+  <App />,
+  document.getElementById('root')
+)

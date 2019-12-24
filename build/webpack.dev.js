@@ -7,7 +7,7 @@ const webpackConfig = merge(webpackBase, {
   entry: path.join(__dirname, '../app/main.js'), // 已多次提及的唯一入口文件
   output: {
     path: path.join(__dirname, '../dist'), // 打包后的文件存放的地方
-    filename: '[name]_[hash].js'
+    filename: 'bundle.js'
   },
   devtool: 'source-map',
   devServer: {

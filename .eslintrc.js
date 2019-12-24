@@ -1,0 +1,26 @@
+module.exports = {
+  "parser": "@typescript-eslint/parser", // 这个可以解析 Ts, 当然, js 也可以.
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "linebreak-style": ["off"], // 不同操作系统换行符问题.
+    "comma-dangle": ["error", "never"], // 对象最后一个不要加逗号.
+    "semi": ["error", "never"], // 不要分号
+    "react/jsx-filename-extension": ["off"], // js 中用 jsx 语法报错.
+    "import/extensions": ["off"], // import .jsx 文件报错.
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    "no-static-element-interactions": ["off"],
+    "click-events-have-key-events": ["off"],
+    "import/no-extraneous-dependencies": ["off"],
+    "max-classes-per-file": ["off"],
+    "lines-between-class-members": ["off"],
+    "max-len": ["error", { "code": 111 }],
+    "no-else-return": ["off"],
+    "class-methods-use-this": ["off"]
+    // "prefer-const": ["off"]
+  }
+}

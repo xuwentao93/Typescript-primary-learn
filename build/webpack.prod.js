@@ -1,6 +1,5 @@
 const webpack = require('webpack')
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
@@ -31,21 +30,12 @@ const webpackConfig = merge(webpackBase, {
       assetNameRegExp: /\.css$/g,
       cssProcessor: cssnano
     }),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, '../app/index.html'),
-      filename: 'index.html',
-      inject: true,
-      minify: {
-        html5: true,
-        collapseWhitespace: true,
-        preserveLineBreaks: false,
-        minifyCSS: true,
-        minifyJS: true,
-        removeComments: false
-      }
-    }),
     new CleanWebpackPlugin(),
-    new SpeedMeasureWebpackPlugin()
+    new SpeedMeasureWebpackPlugin(),
+    new webpack.DllReferencePlugin({
+      // eslint-disable-next-line global-require
+      manifest: require('../static/library.json')
+    })
   ]
 })
 
