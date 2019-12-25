@@ -5,6 +5,7 @@
     "module": "es6",
     "target": "es5",
     "allowJs": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "strictNullChecks": true // 不允许将 null, undefined 分配给其他基本数据类型.
   }
 }

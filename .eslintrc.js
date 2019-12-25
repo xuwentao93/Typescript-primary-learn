@@ -20,7 +20,11 @@ module.exports = {
     "lines-between-class-members": ["off"],
     "max-len": ["error", { "code": 111 }],
     "no-else-return": ["off"],
-    "class-methods-use-this": ["off"]
+    "class-methods-use-this": ["off"],
+    "no-plusplus": ["off"],
+    "no-unused-vars": ["off"], // ts 出现部分问题导致使用过的值仍会出现这个提示.
+    "prefer-const": ["off"],
+    "arrow-parens": ["off"]
     // "prefer-const": ["off"]
   }
 }
