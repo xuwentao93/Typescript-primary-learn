@@ -1,7 +1,19 @@
-const hello: number = 1
+// eslint-disable-next-line spaced-comment
+/// <reference path='child.ts' />
 
-export default hello
+const number: number = 1
+const string: string = '1'
+interface TypeCheck {
+  name: string,
+  age: number
+}
+const obj: TypeCheck = {
+  name: '1',
+  age: 1
+}
 
+
+export { obj, number, string }
 // const test: [number, void] = [null, null]
 // 总结: number[] 是表示元素中都为数字的数组, [number, string] 只能表示数组的长度为2.
 // null, undefined 是任何类型的子集, 所以任何类型的值设置成他们都是通过的.
@@ -250,3 +262,25 @@ s = null
 // Ts 内置的几种类型.
 
 //
+// class A {
+//   number: number
+// }
+// export { A } // ts 导出, 加大括号.
+
+// interface Test {
+//   name: string,
+//   same: string
+// }
+// interface Test {
+//   number: number
+//   same: string // 必须为string, 同名的除了函数类型必须相同.
+// }
+// const test: Test = {
+//   name: '1',
+//   number: 1
+// } // 多个同名接口可以合并. 注意, 同名的命名空间, 如果某个变量没有导出但是在另一个
+// 同名的命名空间中使用, typescript 会报错.
+
+let x: StringTool = {
+  str: '1'
+}

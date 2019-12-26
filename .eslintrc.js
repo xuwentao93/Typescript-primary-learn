@@ -1,4 +1,11 @@
 module.exports = {
+  "settings": {
+    "import/resolver": { // 这个配置能正确引入 .ts 文件.
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
   "parser": "@typescript-eslint/parser", // 这个可以解析 Ts, 当然, js 也可以.
   "extends": "airbnb",
   "env": {
@@ -24,7 +31,9 @@ module.exports = {
     "no-plusplus": ["off"],
     "no-unused-vars": ["off"], // ts 出现部分问题导致使用过的值仍会出现这个提示.
     "prefer-const": ["off"],
-    "arrow-parens": ["off"]
+    "arrow-parens": ["off"],
+    "no-use-before-define": ["off"],
+    "no-param-reassign": ["off"]
     // "prefer-const": ["off"]
   }
 }

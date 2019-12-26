@@ -1,10 +1,11 @@
-import React from 'react'
+import React from './React'
 import { render } from 'react-dom'
-import hello from './hello.ts'
+import * as test from './middleware.ts'
 
+console.log(test)
 function App() {
   return (
-    <div>{hello}</div>
+    <div>{ 1 }</div>
   )
 }
 render(
